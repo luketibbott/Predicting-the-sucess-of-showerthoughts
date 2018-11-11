@@ -9,3 +9,9 @@ def strip_punc(s):
 
 def strip_nums(s):
     return re.sub('[0-9]', '', s)
+
+def make_labels(score):
+    if score > 1:
+        return 1
+    else:
+        return 0
