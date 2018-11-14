@@ -13,7 +13,7 @@
   <body>
 
     <div class="jumbotron text-center" style="margin-bottom:0">
-      <h1>Let me tell you if your showerthought is good or bad</h1>
+      <h1>Predict your showerthought's success!</h1>
     </div>
 
     <!-- Use navbar just as a visual divider -->
@@ -24,19 +24,22 @@
     <!-- Main Content -->
     <div class="container">
         <br>
-      <table>
-          <tr><td>Enter showerthought here:<input type="text" id="showerthought"></td></tr><br><br>
-      </table>
+          Enter showerthought here:<br>
+          <input type="text" id="showerthought" style="width: 800px"><br><br>
       <div>
           <button id="submit">Get prediction</button>
       </div>
       <br>
       <br>
-        <font size="+2">My prediction is:
+        
     <div>
-          This showerthought <b id="hard_predict"></b><br>
-          My confidence in this prediction: <b id="soft_predict"></b>
+        <font size="+2">
+          This showerthought... <b id="hard_predict"></b><br>
+          Probability of success: <b id="soft_predict"></b>
         </font>
+        <div>
+            <font size="+1">Note that success is defined as getting at least one upvote from another person.</font>
+        </div>
     </div>
     </div>
     <br>
@@ -48,7 +51,7 @@
       
         function predict(){
             let features = {
-                'showerthought': document.getElementById("showerthought").val()
+                'showerthought': $("#showerthought").val()
             }
     
             console.log(features);
@@ -61,10 +64,11 @@
             async: true,
             data: JSON.stringify(features),
             success: (result) => {
-                $('#hard_predict').html(result['prediction'] ? '<b>sucks</b>' : '<b>is good!</b>' );
+                $('#hard_predict').html(result['prediction'] ? '<b>is good!</b>' : '<b>is no good!</b>' );
                 $('#soft_predict').html(result['prob_good']);
             },
             error: (result) => {
+                console.log(result)
                 alert('An error occurred')
             }
             })

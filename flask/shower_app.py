@@ -1,5 +1,5 @@
 from flask import Flask, abort, request, render_template, jsonify
-from api import predict_st
+from api import predict_success
 
 app = Flask('ShowerthoughtsApp')
 
@@ -9,13 +9,13 @@ def do_prediction():
         abort(400)
     data = request.json
 
-    response = predict_st(data)
+    response = predict_success(data)
 
     return jsonify(response), 201
 
 @app.route('/')
 def index():
-    return render_template('bootstrap_st.html')
+    return render_template('bootstrap_shower.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
