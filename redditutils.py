@@ -36,7 +36,7 @@ def remove_bad_indices(features, response):
 def upsample(features, response):
     # Returns SMOTE-upsample features and response
 
-    sm = SMOTE()
+    sm = SMOTE(n_jobs=4)
 
     return sm.fit_sample(features, response)
 
