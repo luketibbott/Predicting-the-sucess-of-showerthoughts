@@ -23,3 +23,6 @@ word2vecReader.py
 word2vecReaderUtils.py
 word2vec_twitter_model
 word2vec_twitter_model.bin
+reddit-ETL.ipynb
+results.csv
+
