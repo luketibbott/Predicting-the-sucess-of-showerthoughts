@@ -3,13 +3,13 @@ This project attempts to predict whether a showerthought will be successful or a
 
 ## Important files in repository
 
-count-vec-models.ipynb - Trains a couple simple bag of words models as baseline models
-model-tuning.ipynb - Tune final model and generate ROC AUC plot on test data
-showerthoughts-clean.ipynb - Initial cleaning of data and LDA topic modeling
-test-time.ipynb - Attempt to add time component to model to increase AUC
-tfidf.ipynb - Try using TF-IDF representation of showerthoughts with clustering to increase model performance
-word-cloud.ipynb - Generate word cloud for presentation using Tableau
-word2vec-viz.ipynb - Create simple matplotlib visualization showing how I embedded documents
-word2vec.ipynb - Embed showerthoughts in 400 dimensional vectorspace and do initial modeling with features
+* count-vec-models.ipynb - Trains a couple simple bag of words models as baseline models
+* model-tuning.ipynb - Tune final model and generate ROC AUC plot on test data
+* showerthoughts-clean.ipynb - Initial cleaning of data and LDA topic modeling
+* test-time.ipynb - Attempt to add time component to model to increase AUC
+* tfidf.ipynb - Try using TF-IDF representation of showerthoughts with clustering to increase model performance
+* word-cloud.ipynb - Generate word cloud for presentation using Tableau
+* word2vec-viz.ipynb - Create simple matplotlib visualization showing how I embedded documents
+* word2vec.ipynb - Embed showerthoughts in 400 dimensional vectorspace and do initial modeling with features
 
-redditutils.py - Helper functions to clean data, upsample data, and make features using word2vec
+* redditutils.py - Helper functions to clean data, upsample data, and make features using word2vec
